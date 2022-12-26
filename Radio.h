@@ -67,6 +67,7 @@
 #include "Radio-CC1101.h"
 #include "Radio-Si4431.h"
 #include "Radio-RFM69.h"
+#include "Radio-SX1276.h"
 
 namespace as {
 
@@ -539,6 +540,9 @@ class Si4431Radio : public Radio<SPIType,GDO0, PWRPIN,SENDDELAY,Si4431<SPIType,P
 
 template <class SPIType, uint8_t GDO0, uint8_t PWRPIN = 0xff, int SENDDELAY = 100>
 class RFM69Radio : public Radio<SPIType, GDO0, PWRPIN, SENDDELAY, RFM69<SPIType, PWRPIN, GDO0>> {};
+
+template <class SPIType, uint8_t GDO0, uint8_t PWRPIN = 0xff, int SENDDELAY = 100>
+class SX1276Radio : public Radio<SPIType, GDO0, PWRPIN, SENDDELAY, SX1276<SPIType, PWRPIN, GDO0>> {};
 
 }
 
